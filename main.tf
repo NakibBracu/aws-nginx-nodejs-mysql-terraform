@@ -306,7 +306,7 @@ resource "aws_instance" "nginx" {
   instance_type = var.instance_type
 
   subnet_id                   = aws_subnet.public.id
-  vpc_security_group_ids     = [aws_security_group.nginx.id]
+  vpc_security_group_ids      = [aws_security_group.nginx.id]
   associate_public_ip_address = true
 
   key_name = var.key_name
@@ -325,7 +325,7 @@ resource "aws_instance" "node1" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.instance_type
 
-  subnet_id               = aws_subnet.private.id
+  subnet_id              = aws_subnet.private.id
   vpc_security_group_ids = [aws_security_group.nodes.id]
 
   key_name = var.key_name
@@ -344,7 +344,7 @@ resource "aws_instance" "node2" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.instance_type
 
-  subnet_id               = aws_subnet.private.id
+  subnet_id              = aws_subnet.private.id
   vpc_security_group_ids = [aws_security_group.nodes.id]
 
   key_name = var.key_name
@@ -363,7 +363,7 @@ resource "aws_instance" "mysql" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.instance_type
 
-  subnet_id               = aws_subnet.private.id
+  subnet_id              = aws_subnet.private.id
   vpc_security_group_ids = [aws_security_group.mysql.id]
 
   key_name = var.key_name
